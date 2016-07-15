@@ -24,7 +24,7 @@ Scenario: HTML Tidy
   Wait until page contains  Anmelden
   ${sourcecode}=  Get Source
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
-  ${output}=  Run Process  /usr/bin/tidy  ${OUTPUT_DIR}/source.html
+  ${output}=  Run Process  /usr/bin/tidy  -q  -e  ${OUTPUT_DIR}/source.html
   Log  ----  WARN
   Log  ${output.stderr}  WARN
   Log  ----  WARN
