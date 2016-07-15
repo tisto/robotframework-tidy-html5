@@ -35,4 +35,13 @@ Scenario: HTML5 Lint
   ${output}=  Run Process  python  html5check.py  ${OUTPUT_DIR}/source.html
   Log  \n${output.stdout}  WARN
 
+Scenario:  a11y
+  Go To  ${SERVER}
+  Wait until page contains  Anmelden
+  ${sourcecode}=  Get Source
+  Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
+  ${output}=  Run Process  a11y  ${OUTPUT_DIR}/source.html
+  Log  \n${output.stdout}  WARN
+
+
 *** Keywords ***

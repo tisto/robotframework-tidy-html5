@@ -48,3 +48,30 @@ Usage::
 Website::
 
     https://github.com/mozilla/html5-lint
+
+
+A11Y
+----
+
+About::
+
+Easy accessibility audits powered by the Chrome Accessibility Tools.
+
+https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en
+
+Installation::
+
+  $ npm install a11y
+
+Usage::
+
+  $ a11y index.html
+  $ a11y https://kitconcept.com
+
+Github::
+
+    https://github.com/addyosmani/a11y
+
+Website::
+
+    https://addyosmani.com/a11y/
