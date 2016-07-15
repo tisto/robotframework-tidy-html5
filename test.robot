@@ -10,7 +10,6 @@ ${SERVER}               http://${HOST}:${PORT}
 
 Documentation   HTML Linter Acceptance Tests
 Library         DebugLibrary
-Library         ExtendedSelenium2Library
 Library         OperatingSystem
 Library         Process
 Library         Selenium2Library  timeout=10  implicit_wait=0
@@ -23,7 +22,6 @@ Suite Teardown  Close Browser
 Scenario: HTML Tidy
   Go To  ${SERVER}
   Wait until page contains  Anmelden
-  Wait Until Angular Ready
   ${sourcecode}=  Get Source
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
   ${output}=  Run Process  /usr/bin/tidy  ${OUTPUT_DIR}/source.html
