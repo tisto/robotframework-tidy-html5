@@ -8,7 +8,7 @@ ${SERVER}               http://${HOST}:${PORT}
 
 *** Settings ***
 
-Documentation   WebpackLibrary Acceptance Tests
+Documentation   HTML Linter Acceptance Tests
 Library         DebugLibrary
 Library         OperatingSystem
 Library         Process
@@ -36,7 +36,7 @@ Scenario: HTML5 Lint
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
   ${output}=  Run Process  python  html5check.py  ${OUTPUT_DIR}/source.html
   Log  ----  WARN
-  Log  ${output.stderr}  WARN
+  Log  ${output.stdout}  WARN
   Log  ----  WARN
 
 *** Keywords ***
