@@ -1,14 +1,15 @@
 *** Variables ***
 
-${HOST}                 kitconcept.com
-${PORT}                 80
+${HOST}                 localhost
+${PORT}                 8000
 ${BROWSER}              chrome
-${SERVER}               https://${HOST}:${PORT}
+${SERVER}               http://${HOST}:${PORT}
 
 
 *** Settings ***
 
 Documentation   WebpackLibrary Acceptance Tests
+Library         DebugLibrary
 Library         OperatingSystem
 Library         Process
 Library         Selenium2Library  timeout=10  implicit_wait=0
@@ -20,11 +21,12 @@ Suite Teardown  Close Browser
 
 Scenario: Webpack Dev Server
   Go To  ${SERVER}
-  Wait until page contains  kitconcept
+  Wait until page contains  Anmelden
   ${sourcecode}=  Get Source
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
-  ${output}=  Run Process  tidy -config tidy.conf source.html
-  Log  ${output}  WARN
+  ${output}=  Run Process  /usr/bin/tidy  ${OUTPUT_DIR}/source.html
+  Log  ----  WARN
+  Log  ${output.stderr}  WARN
+  Log  ----  WARN
 
 *** Keywords ***
-
