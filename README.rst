@@ -75,3 +75,22 @@ Github::
 Website::
 
     https://addyosmani.com/a11y/
+
+
+PA11Y
+-----
+
+Installation::
+
+  $ sudo npm install -g pa11y
+
+Github::
+
+    https://github.com/pa11y/pa11y
+
+
+Misc
+----
+
+- https://webaccessibility.withgoogle.com/course
+- https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en

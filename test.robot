@@ -43,5 +43,15 @@ Scenario: a11y
   ${output}=  Run Process  a11y  ${OUTPUT_DIR}/source.html
   Log  \n${output.stdout}  WARN
 
+Scenario: pa11y
+  Go To  ${SERVER}
+  Wait until page contains  Anmelden
+  ${sourcecode}=  Get Source
+  Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
+  ${httpserver}=  Start Process  python  -m  SimpleHTTPServer  8762
+  Sleep  2s
+  ${output}=  Run Process  pa11y  http://localhost:8762/source.html
+  Log  \n${output.stderr}  WARN
+  Terminate Process  ${httpserver}
 
 *** Keywords ***
