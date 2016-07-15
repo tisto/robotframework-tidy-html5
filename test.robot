@@ -19,7 +19,7 @@ Suite Teardown  Close Browser
 
 *** Test Cases ***
 
-Scenario: Webpack Dev Server
+Scenario: HTML Tidy
   Go To  ${SERVER}
   Wait until page contains  Anmelden
   ${sourcecode}=  Get Source
