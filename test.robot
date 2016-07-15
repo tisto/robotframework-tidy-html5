@@ -25,9 +25,7 @@ Scenario: HTML Tidy
   ${sourcecode}=  Get Source
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
   ${output}=  Run Process  /usr/bin/tidy  -q  -e  ${OUTPUT_DIR}/source.html
-  Log  ----  WARN
-  Log  ${output.stderr}  WARN
-  Log  ----  WARN
+  Log  \n${output.stderr}  WARN
 
 Scenario: HTML5 Lint
   Go To  ${SERVER}
@@ -35,8 +33,6 @@ Scenario: HTML5 Lint
   ${sourcecode}=  Get Source
   Create File  ${OUTPUT_DIR}/source.html  ${sourcecode}
   ${output}=  Run Process  python  html5check.py  ${OUTPUT_DIR}/source.html
-  Log  ----  WARN
-  Log  ${output.stdout}  WARN
-  Log  ----  WARN
+  Log  \n${output.stdout}  WARN
 
 *** Keywords ***
