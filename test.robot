@@ -10,9 +10,10 @@ ${SERVER}               http://${HOST}:${PORT}
 
 Documentation   HTML Linter Acceptance Tests
 Library         DebugLibrary
+Library         ExtendedSelenium2Library
 Library         OperatingSystem
 Library         Process
-Library         ExtendedSelenium2Library  timeout=10  implicit_wait=0
+Library         Selenium2Library  timeout=10  implicit_wait=0
 Suite Setup     Open Browser  ${SERVER}  ${BROWSER}
 Suite Teardown  Close Browser
 
