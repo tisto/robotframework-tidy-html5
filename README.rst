@@ -4,7 +4,7 @@ Tidy HTML5
 Installation::
 
     $ git clone https://github.com/htacg/tidy-html5.git
-    $ cd tidy-html5/
+    $ cd tidy-html5/build/cmake
     $ apt-get install cmake
     $ sh build-me.sh
     $ sudo make install
